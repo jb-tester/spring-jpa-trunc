@@ -5,12 +5,7 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-/**
- * *
- * <p>Created by irina on 6/5/2023.</p>
- * <p>Project: spring-jpa-oracle</p>
- * *
- */
+
 @Entity
 @Table(name = "orders")
 public class Order {
