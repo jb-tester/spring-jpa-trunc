@@ -25,7 +25,7 @@ public interface OrderRepository extends CrudRepository<Order, Integer> {
 
     // works ok in Hibernate 5 only, see https://hibernate.atlassian.net/browse/HHH-15855
     // no errors are reported by IDEA if extra parenthesis are added around trunc(arg)
-    @Query("select trunc(o.creationDate) from Order o where (trunc(current_date)) <= :arg")
+    @Query("select trunc(o.creationDate) from Order o where (trunc(current_date) - trunc(o.creationDate)) <= :arg")
     List<String> hibernate5SingleArgTrunc2(@Param("arg") Date arg);
 
     // works both in Hibernate 5,6
